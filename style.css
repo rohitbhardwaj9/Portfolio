@@ -7,14 +7,69 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* creating custom scrollbar  */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: linear-gradient(45deg, rgb(0, 217, 255), rgb(0, 255, 128));
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(0, 255, 128);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(0, 217, 255);
+}
+
+
+/* Giving styling to same class element  */
 section {
-  padding: 100px 0;
+    padding: 100px 0;
 }
 .max-width {
-  max-width: 1300px;
-  padding: 0 80px;
-  margin: auto;
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
 }
+.about, .services{
+    font-family: sans-serif;
+}
+.about .about-content .services .serv-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: rgb(0, 184, 0);
+    padding: 0 5px;
+    background: white;
+    transform: translateX(-50%); 
+}  
 
 /* navbar styling */
 .navbar {
@@ -23,22 +78,23 @@ section {
   z-index: 999;
   padding: 30px 0;
   font-family: sans-serif;
+  transition: all 0.3s ease;
 }
 .navbar .max-width {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.navbar .menu a {
+.navbar .logo a {
   color: black;
   font-size: 35px;
   font-weight: 550;
 }
 .navbar .logo a span {
-  color: rgb(0, 184, 0);
+  color: rgb(33, 204, 33);
 }
 .navbar .logo a:hover {
-  color: aqua;
+  color: rgb(62, 0, 133);
 }
 .navbar .menu li {
   list-style: none;
@@ -50,6 +106,9 @@ section {
   font-size: 18px;
   font-weight: 450;
   margin-left: 25px;
+}
+.navbar .menu li a:hover{
+    color: rgb(62, 0, 133);
 }
 .menu-btn {
   color: white;
